@@ -23,3 +23,14 @@ struct ContactListModel: Codable {
         self.items = items
     }
 }
+
+struct ContactDetailModel: Codable {
+
+    let id : Int?
+    let first_name : String?
+    let last_name : String?
+    let email : String?
+    let phone_number : String?
+    let profile_pic : String?
+    let favorite : Bool?
+}

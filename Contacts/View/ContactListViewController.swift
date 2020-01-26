@@ -60,14 +60,14 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let model = contactlistViewModel.cellViewModel(index: indexPath.row)
-//        
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier :"ContactDetailViewController") as! ContactDetailViewController
-//        viewController.contactModel = model
-//        self.navigationController?.pushViewController(viewController, animated: true)
+        let model = contactlistViewModel.cellViewModel(index: indexPath.row)
+
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier :"ContactDetailViewController") as! ContactDetailViewController
+        viewController.contactModel = model
+        self.navigationController?.pushViewController(viewController, animated: true)
         
         
     }
