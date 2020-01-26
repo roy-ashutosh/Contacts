@@ -13,7 +13,7 @@ class ContactListViewModel {
     private let networking = Networking()
     
     public func getContactList(completion: (() -> Void)?) {
-        networking.performNetworkTask(endpoint: "",
+        networking.performNetworkTask(endpoint: "https://gojek-contacts-app.herokuapp.com/contacts.json",
                                       type: [ContactModel].self) { [weak self] (response) in
                                         self?.contacts = response
                                         completion?()

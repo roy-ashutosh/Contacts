@@ -19,9 +19,7 @@ extension Response {
     public func decode<T: Codable>(_ type: T.Type) -> T? {
         let jsonDecoder = JSONDecoder()
         do {
-//            let response = try jsonDecoder.decode(T.self, from: data)
             let response = try jsonDecoder.decode(T.self, from: data)
-//            let response = try jsonDecoder.decode([ContactModel].self, from: data)
             return response as! T
         } catch let error {
             return nil

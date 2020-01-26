@@ -15,7 +15,7 @@ class ContactDetailViewModel {
     private let networking = Networking()
     
     public func getContactDetails(url: String, completion: ((_ response: ContactDetailModel) -> Void)?) {
-        networking.performNetworkTaskDetail(endpoint: url,
+        networking.performNetworkTask(endpoint: url,
                                       type: ContactDetailModel.self) { [weak self] (response) in
                                         self?.contactsDetail = response
 //                                        completion?()
