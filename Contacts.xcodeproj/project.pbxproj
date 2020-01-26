@@ -25,6 +25,8 @@
 		D5CF769223DE32B6000F4425 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CF769123DE32B6000F4425 /* ContactDetailViewController.swift */; };
 		D5CF769423DE382C000F4425 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CF769323DE382C000F4425 /* ContactDetailViewModel.swift */; };
 		D5CF769623DE38E3000F4425 /* ContactDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CF769523DE38E3000F4425 /* ContactDetailTableViewCell.swift */; };
+		D5CF769823DE39D4000F4425 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CF769723DE39D4000F4425 /* AddContactViewController.swift */; };
+		D5CF769A23DE4084000F4425 /* AddEditContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CF769923DE4084000F4425 /* AddEditContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		D5CF769123DE32B6000F4425 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		D5CF769323DE382C000F4425 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 		D5CF769523DE38E3000F4425 /* ContactDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailTableViewCell.swift; sourceTree = "<group>"; };
+		D5CF769723DE39D4000F4425 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
+		D5CF769923DE4084000F4425 /* AddEditContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditContactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 				D5CF768F23DE2FDB000F4425 /* ContactListTableViewCell.swift */,
 				D5CF769123DE32B6000F4425 /* ContactDetailViewController.swift */,
 				D5CF769523DE38E3000F4425 /* ContactDetailTableViewCell.swift */,
+				D5CF769723DE39D4000F4425 /* AddContactViewController.swift */,
+				D5CF769923DE4084000F4425 /* AddEditContactTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +336,8 @@
 				D5CF769023DE2FDB000F4425 /* ContactListTableViewCell.swift in Sources */,
 				D5CF764F23DE2780000F4425 /* AppDelegate.swift in Sources */,
 				D5CF769623DE38E3000F4425 /* ContactDetailTableViewCell.swift in Sources */,
+				D5CF769823DE39D4000F4425 /* AddContactViewController.swift in Sources */,
+				D5CF769A23DE4084000F4425 /* AddEditContactTableViewCell.swift in Sources */,
 				D5CF769223DE32B6000F4425 /* ContactDetailViewController.swift in Sources */,
 				D5CF768A23DE2981000F4425 /* ContactListModel.swift in Sources */,
 				D5CF769423DE382C000F4425 /* ContactDetailViewModel.swift in Sources */,

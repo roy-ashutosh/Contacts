@@ -178,7 +178,7 @@
                                 <rect key="frame" x="0.0" y="394" width="414" height="468"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="djB-V3-0NU" customClass="ContactDetailTableViewCell" customModule="Contacts" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="djB-V3-0NU" customClass="ContactDetailTableViewCell" customModule="Contacts" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="djB-V3-0NU" id="Lis-jx-f9V">
@@ -261,11 +261,20 @@
                                             <constraint firstAttribute="width" constant="130" id="dka-cG-djN"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CXM-dG-NAH">
+                                        <rect key="frame" x="232" y="150" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="10r-Gr-96Y"/>
+                                            <constraint firstAttribute="height" constant="40" id="eYo-lw-8I6"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="CXM-dG-NAH" firstAttribute="trailing" secondItem="yhB-5L-t0J" secondAttribute="trailing" id="85C-vV-Xm6"/>
                                     <constraint firstItem="yhB-5L-t0J" firstAttribute="centerY" secondItem="8a6-pf-5Kf" secondAttribute="centerY" id="JdU-Lr-PwZ"/>
                                     <constraint firstItem="yhB-5L-t0J" firstAttribute="centerX" secondItem="8a6-pf-5Kf" secondAttribute="centerX" id="LMf-XG-VFX"/>
+                                    <constraint firstItem="CXM-dG-NAH" firstAttribute="bottom" secondItem="yhB-5L-t0J" secondAttribute="bottom" id="det-7Q-EO4"/>
                                     <constraint firstAttribute="height" constant="250" id="hRR-ds-KqN"/>
                                 </constraints>
                             </view>
@@ -273,15 +282,46 @@
                                 <rect key="frame" x="0.0" y="338" width="414" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="awD-vP-Ijg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="awD-vP-Ijg" customClass="AddEditContactTableViewCell" customModule="Contacts" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="awD-vP-Ijg" id="jEN-ov-KOH">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0d-Uv-FLs">
+                                                    <rect key="frame" x="28" y="11.5" width="100" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="9xx-Sa-daf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ic-Fj-5pd">
+                                                    <rect key="frame" x="160" y="13.5" width="254" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3ic-Fj-5pd" firstAttribute="leading" secondItem="I0d-Uv-FLs" secondAttribute="trailing" constant="32" id="2Rh-Rp-lWE"/>
+                                                <constraint firstItem="3ic-Fj-5pd" firstAttribute="centerY" secondItem="jEN-ov-KOH" secondAttribute="centerY" id="Uho-9c-Mzj"/>
+                                                <constraint firstItem="I0d-Uv-FLs" firstAttribute="leading" secondItem="jEN-ov-KOH" secondAttribute="leadingMargin" constant="8" id="bT7-jG-Ik9"/>
+                                                <constraint firstAttribute="trailing" secondItem="3ic-Fj-5pd" secondAttribute="trailing" id="hCQ-Ni-JxD"/>
+                                                <constraint firstItem="I0d-Uv-FLs" firstAttribute="centerY" secondItem="jEN-ov-KOH" secondAttribute="centerY" id="phZ-GL-Lzk"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fieldValue" destination="3ic-Fj-5pd" id="XDv-gv-kFi"/>
+                                            <outlet property="filedName" destination="I0d-Uv-FLs" id="0P0-fq-Uqw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ukL-Ua-f5n" id="aFD-mi-ebh"/>
+                                    <outlet property="delegate" destination="ukL-Ua-f5n" id="zCC-qZ-f2V"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -297,11 +337,21 @@
                         <viewLayoutGuide key="safeArea" id="9WZ-mJ-qIp"/>
                     </view>
                     <navigationItem key="navigationItem" id="HH3-ta-H7W">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" style="plain" id="Zaq-iB-K0N"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="gfT-Sx-7bT"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" style="plain" id="Zaq-iB-K0N">
+                            <connections>
+                                <action selector="cancelAction:" destination="ukL-Ua-f5n" id="iSn-bb-pFz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="gfT-Sx-7bT">
+                            <connections>
+                                <action selector="doneAction:" destination="ukL-Ua-f5n" id="xu8-og-acy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addContactTableView" destination="4WQ-Fl-TEg" id="5x5-fa-PGU"/>
+                        <outlet property="cameraImage" destination="CXM-dG-NAH" id="RX1-Mo-lW0"/>
+                        <outlet property="contactImage" destination="yhB-5L-t0J" id="6S0-OP-pDT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yae-lC-srN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
