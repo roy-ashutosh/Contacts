@@ -11,7 +11,22 @@ import UIKit
 let contactDetailViewModel = ContactDetailViewModel()
 
 class ContactDetailViewController: UIViewController {
+    
     @IBOutlet weak var detailTableView: UITableView!
+    
+    @IBAction func editAction(_ sender: Any) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier :"AddContactViewController") as! UINavigationController
+//
+//        self.present(viewController, animated: true, completion: nil)
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier :"AddContactViewController") as! AddContactViewController
+        viewController.addEditType = AddEditMode.edit
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
     
     let fieldNames : [String] = ["mobile", "email"]
     var detail : ContactDetailModel?
@@ -30,6 +45,9 @@ class ContactDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //add the navigation bar button item "edit" and on tapping it, present AddContactViewController. When presenting, pass the contact model to AddContactViewController.
+        
+        self.title = ""
         contactImage.image = UIImage(named: "placeholder_photo")
         contactName.text = contactModel?.first_name
         

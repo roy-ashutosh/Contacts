@@ -16,10 +16,17 @@ class ContactListViewController: UIViewController {
     
     @IBAction func addContact(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier :"AddContactViewController") as! UINavigationController
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier :"AddContactNavigationController") as! UINavigationController
+//
+//        self.present(viewController, animated: true, completion: nil)
         
-        self.present(viewController, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let addEditViewController = storyboard.instantiateViewController(withIdentifier :"AddContactViewController") as! AddContactViewController
+        addEditViewController.addEditType =  AddEditMode.add
+        let destinationNavigationController = storyboard.instantiateViewController(withIdentifier: "AddContactNavigationController") as! UINavigationController
+        destinationNavigationController.pushViewController(addEditViewController, animated: true)
+        self.present(destinationNavigationController, animated: true, completion: nil)
         
     }
     override func viewDidLoad() {

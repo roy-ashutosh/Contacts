@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="95.758928571428569"/>
         </scene>
-        <!--Contact Detail View Controller-->
+        <!--Title-->
         <scene sceneID="lVs-wh-dMk">
             <objects>
                 <viewController storyboardIdentifier="ContactDetailViewController" id="OPB-v2-iEL" customClass="ContactDetailViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nc-5A-bCk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="350"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="350"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tZg-sG-2k1">
                                         <rect key="frame" x="157" y="84" width="100" height="100"/>
@@ -175,7 +175,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-t4-41k">
-                                <rect key="frame" x="0.0" y="394" width="414" height="468"/>
+                                <rect key="frame" x="0.0" y="438" width="414" height="424"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="djB-V3-0NU" customClass="ContactDetailTableViewCell" customModule="Contacts" customModuleProvider="target">
@@ -229,6 +229,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mdv-S0-fVw"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="JsK-Is-PRm">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="WmC-xL-TOH">
+                            <connections>
+                                <action selector="editAction:" destination="OPB-v2-iEL" id="LPg-Uw-9ro"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="callButton" destination="3Dx-J9-bwf" id="0pf-oe-axw"/>
                         <outlet property="contactImage" destination="tZg-sG-2k1" id="k8e-ud-Rxi"/>
@@ -246,7 +254,7 @@
         <!--Add Contact View Controller-->
         <scene sceneID="8VK-Mm-2Zn">
             <objects>
-                <viewController id="ukL-Ua-f5n" customClass="AddContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddContactViewController" id="ukL-Ua-f5n" customClass="AddContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hrg-cm-OH9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,7 +387,7 @@
         <!--Navigation Controller-->
         <scene sceneID="y5h-nv-YNM">
             <objects>
-                <navigationController storyboardIdentifier="AddContactViewController" automaticallyAdjustsScrollViewInsets="NO" id="EBe-ZF-a4n" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddContactNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="EBe-ZF-a4n" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZTQ-M5-dEv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

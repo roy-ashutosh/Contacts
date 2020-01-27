@@ -8,20 +8,29 @@
 
 import UIKit
 
+enum AddEditMode {
+    case add
+    case edit
+}
+
 class AddContactViewController: UIViewController {
+    
+    var addEditType : AddEditMode?
     
     @IBOutlet weak var contactImage: UIImageView!
     @IBOutlet weak var cameraImage: UIImageView!
     
     @IBAction func doneAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismissAddEditView()
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismissAddEditView()
     }
     
     @IBOutlet weak var addContactTableView: UITableView!
+    
+    var existingDetail : ContactDetailModel?
     
     let fieldNames = ["First Name", "Last Name", "mobile", "email"]
     
@@ -29,11 +38,31 @@ class AddContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Add Contact"
+//        self.title = "Add Contact"
+        self.title = ""
         contactImage.image = UIImage.init(named: "placeholder_photo")
         cameraImage.image = UIImage.init(named: "camera_button")
         // Do any additional setup after loading the view.
     }
+    
+    
+    func dismissAddEditView() -> Void {
+        if addEditType != nil {
+            switch addEditType {
+            case .add:
+                self.dismiss(animated: true, completion: nil)
+            case .edit:
+                self.navigationController?.popViewController(animated: true)
+            default:
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        else{
+            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
 }
 
 extension AddContactViewController: UITableViewDelegate, UITableViewDataSource{
