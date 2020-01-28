@@ -310,6 +310,9 @@
                                                     <rect key="frame" x="160" y="13.5" width="254" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textChanged:" destination="awD-vP-Ijg" eventType="editingChanged" id="dOu-LE-Hez"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>

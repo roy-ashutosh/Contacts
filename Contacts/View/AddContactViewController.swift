@@ -75,6 +75,43 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource{
         cell.filedName.text = fieldNames[indexPath.row]
         cell.filedName.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 0.5)
         cell.fieldValue.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1.0)
+        
+        if (fieldNames[indexPath.row] == "First Name")
+        {
+            if let fname = existingDetail?.first_name, !fname.isEmpty {
+                cell.fieldValue.text = existingDetail?.first_name
+            }
+            else{
+                cell.fieldValue.text = ""
+            }
+        }
+        else if (fieldNames[indexPath.row] == "Last Name")
+        {
+            if let lname = existingDetail?.last_name, !lname.isEmpty {
+                cell.fieldValue.text = existingDetail?.last_name
+            }
+            else{
+                cell.fieldValue.text = ""
+            }
+        }
+        else if (fieldNames[indexPath.row] == "mobile")
+        {
+            if let phone = existingDetail?.phone_number, !phone.isEmpty {
+                cell.fieldValue.text = existingDetail?.phone_number
+            }
+            else{
+                cell.fieldValue.text = ""
+            }
+        }
+        else if (fieldNames[indexPath.row] == "email")
+        {
+            if let mail = existingDetail?.email, !mail.isEmpty {
+                cell.fieldValue.text = existingDetail?.email
+            }
+            else{
+                cell.fieldValue.text = ""
+            }
+        }
         return cell
     }
     

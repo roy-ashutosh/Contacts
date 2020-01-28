@@ -24,6 +24,7 @@ class ContactDetailViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier :"AddContactViewController") as! AddContactViewController
         viewController.addEditType = AddEditMode.edit
+        viewController.existingDetail = detail
         self.navigationController?.pushViewController(viewController, animated: true)
         
     }
@@ -32,7 +33,7 @@ class ContactDetailViewController: UIViewController {
     var detail : ContactDetailModel?
     
     var contactModel : ContactModel?
-    var contactDetailModel : ContactDetailModel?
+//    var contactDetailModel : ContactDetailModel?
     
     @IBOutlet weak var contactImage: UIImageView!
     @IBOutlet weak var contactName: UILabel!

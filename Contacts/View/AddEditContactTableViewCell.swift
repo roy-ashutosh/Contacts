@@ -8,8 +8,13 @@
 
 import UIKit
 
-class AddEditContactTableViewCell: UITableViewCell {
+class AddEditContactTableViewCell: UITableViewCell,UITextFieldDelegate {
+    @IBAction func textChanged(_ sender: Any) {
+        
+    }
     
     @IBOutlet weak var filedName: UILabel!
     @IBOutlet weak var fieldValue: UITextField!
+    
+    
 }
