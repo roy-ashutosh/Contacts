@@ -8,13 +8,18 @@
 
 import UIKit
 
-class AddEditContactTableViewCell: UITableViewCell,UITextFieldDelegate {
-    @IBAction func textChanged(_ sender: Any) {
-        
+protocol AddEditCellDelegate:class {
+    func updateValues(cell:AddEditContactTableViewCell, changedText:String)
+}
+
+class AddEditContactTableViewCell: UITableViewCell {
+    
+    weak var delegate:AddEditCellDelegate?
+    
+    @IBAction func textChanged(_ sender: UITextField) {
+        delegate?.updateValues(cell: self, changedText: sender.text ?? "")
     }
     
-    @IBOutlet weak var filedName: UILabel!
+    @IBOutlet weak var filedName: UILabel!    
     @IBOutlet weak var fieldValue: UITextField!
-    
-    
 }

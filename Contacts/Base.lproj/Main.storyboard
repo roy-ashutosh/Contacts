@@ -306,25 +306,25 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ic-Fj-5pd">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pxb-lj-leE">
                                                     <rect key="frame" x="160" y="13.5" width="254" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="textChanged:" destination="awD-vP-Ijg" eventType="editingChanged" id="dOu-LE-Hez"/>
+                                                        <action selector="textChanged:" destination="awD-vP-Ijg" eventType="editingChanged" id="J1t-bw-3vU"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3ic-Fj-5pd" firstAttribute="leading" secondItem="I0d-Uv-FLs" secondAttribute="trailing" constant="32" id="2Rh-Rp-lWE"/>
-                                                <constraint firstItem="3ic-Fj-5pd" firstAttribute="centerY" secondItem="jEN-ov-KOH" secondAttribute="centerY" id="Uho-9c-Mzj"/>
                                                 <constraint firstItem="I0d-Uv-FLs" firstAttribute="leading" secondItem="jEN-ov-KOH" secondAttribute="leadingMargin" constant="8" id="bT7-jG-Ik9"/>
-                                                <constraint firstAttribute="trailing" secondItem="3ic-Fj-5pd" secondAttribute="trailing" id="hCQ-Ni-JxD"/>
                                                 <constraint firstItem="I0d-Uv-FLs" firstAttribute="centerY" secondItem="jEN-ov-KOH" secondAttribute="centerY" id="phZ-GL-Lzk"/>
+                                                <constraint firstItem="Pxb-lj-leE" firstAttribute="leading" secondItem="I0d-Uv-FLs" secondAttribute="trailing" constant="32" id="uzF-CP-aeZ"/>
+                                                <constraint firstItem="Pxb-lj-leE" firstAttribute="centerY" secondItem="jEN-ov-KOH" secondAttribute="centerY" id="vwx-sx-XkY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pxb-lj-leE" secondAttribute="trailing" id="wWb-2J-Crh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="fieldValue" destination="3ic-Fj-5pd" id="XDv-gv-kFi"/>
+                                            <outlet property="fieldValue" destination="Pxb-lj-leE" id="XSi-Zr-LeD"/>
                                             <outlet property="filedName" destination="I0d-Uv-FLs" id="0P0-fq-Uqw"/>
                                         </connections>
                                     </tableViewCell>

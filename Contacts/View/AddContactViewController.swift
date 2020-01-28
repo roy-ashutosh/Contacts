@@ -21,6 +21,7 @@ class AddContactViewController: UIViewController {
     @IBOutlet weak var cameraImage: UIImageView!
     
     @IBAction func doneAction(_ sender: Any) {
+        print(self.editedFieldValues)
         dismissAddEditView()
     }
     
@@ -34,6 +35,7 @@ class AddContactViewController: UIViewController {
     
     let fieldNames = ["First Name", "Last Name", "mobile", "email"]
     
+    var editedFieldValues:[String:String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +67,17 @@ class AddContactViewController: UIViewController {
     
 }
 
-extension AddContactViewController: UITableViewDelegate, UITableViewDataSource{
+extension AddContactViewController: UITableViewDelegate, UITableViewDataSource, AddEditCellDelegate{
+    
+    func updateValues(cell: AddEditContactTableViewCell, changedText: String) {
+//        saveEditedFieldValues(value: changedText, fieldId: cell.filedName.text!)
+        saveEditedFieldValues(value: changedText, fieldName: cell.filedName.text!)
+    }
+    
+    func  saveEditedFieldValues(value:String? , fieldName:String) {
+        self.editedFieldValues[fieldName] = value
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fieldNames.count
     }
@@ -74,8 +86,10 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AddEditContactTableViewCell
         cell.filedName.text = fieldNames[indexPath.row]
         cell.filedName.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 0.5)
-        cell.fieldValue.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1.0)
         
+        cell.delegate = self
+        cell.fieldValue.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1.0)
+
         if (fieldNames[indexPath.row] == "First Name")
         {
             if let fname = existingDetail?.first_name, !fname.isEmpty {
