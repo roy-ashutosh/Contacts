@@ -324,8 +324,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="fieldName" destination="I0d-Uv-FLs" id="0P0-fq-Uqw"/>
                                             <outlet property="fieldValue" destination="Pxb-lj-leE" id="XSi-Zr-LeD"/>
-                                            <outlet property="filedName" destination="I0d-Uv-FLs" id="0P0-fq-Uqw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

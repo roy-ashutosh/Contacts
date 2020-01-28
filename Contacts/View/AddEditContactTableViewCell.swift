@@ -20,6 +20,6 @@ class AddEditContactTableViewCell: UITableViewCell {
         delegate?.updateValues(cell: self, changedText: sender.text ?? "")
     }
     
-    @IBOutlet weak var filedName: UILabel!    
+    @IBOutlet weak var fieldName: UILabel!    
     @IBOutlet weak var fieldValue: UITextField!
 }

@@ -15,6 +15,8 @@ enum AddEditMode {
 
 class AddContactViewController: UIViewController {
     
+    let contactAddEditVM = ContactAddEditViewModel()
+    
     var addEditType : AddEditMode?
     
     @IBOutlet weak var contactImage: UIImageView!
@@ -22,6 +24,21 @@ class AddContactViewController: UIViewController {
     
     @IBAction func doneAction(_ sender: Any) {
         print(self.editedFieldValues)
+        
+        switch addEditType {
+        case .add:
+            let url = "https://gojek-contacts-app.herokuapp.com/contacts.json"
+            contactAddEditVM.updateContactDetails(url: url, httpMethodType: "POST", paramDict: self.editedFieldValues)
+//            contactAddEditVM.updateContactDetails(url: url, paramDict: self.editedFieldValues)
+        case .edit:
+            if let id = existingDetail?.id {
+                let url = "https://gojek-contacts-app.herokuapp.com/contacts/\(id).json"
+                contactAddEditVM.updateContactDetails(url: url, httpMethodType: "PUT", paramDict: self.editedFieldValues)
+//                contactAddEditVM.updateContactDetails(url: url, paramDict: self.editedFieldValues)
+            }
+        default: break
+        }
+        
         dismissAddEditView()
     }
     
@@ -70,8 +87,10 @@ class AddContactViewController: UIViewController {
 extension AddContactViewController: UITableViewDelegate, UITableViewDataSource, AddEditCellDelegate{
     
     func updateValues(cell: AddEditContactTableViewCell, changedText: String) {
-//        saveEditedFieldValues(value: changedText, fieldId: cell.filedName.text!)
-        saveEditedFieldValues(value: changedText, fieldName: cell.filedName.text!)
+//        saveEditedFieldValues(value: changedText, fieldId: cell.fieldName.text!)
+        var key = cell.fieldName.text ?? ""
+        key = key.lowercased().replacingOccurrences(of: " ", with: "_")
+        saveEditedFieldValues(value: changedText, fieldName: key)
     }
     
     func  saveEditedFieldValues(value:String? , fieldName:String) {
@@ -84,8 +103,8 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AddEditContactTableViewCell
-        cell.filedName.text = fieldNames[indexPath.row]
-        cell.filedName.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 0.5)
+        cell.fieldName.text = fieldNames[indexPath.row]
+        cell.fieldName.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 0.5)
         
         cell.delegate = self
         cell.fieldValue.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1.0)

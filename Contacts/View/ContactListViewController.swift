@@ -16,11 +16,6 @@ class ContactListViewController: UIViewController {
     
     @IBAction func addContact(_ sender: Any) {
         
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier :"AddContactNavigationController") as! UINavigationController
-//
-//        self.present(viewController, animated: true, completion: nil)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let addEditViewController = storyboard.instantiateViewController(withIdentifier :"AddContactViewController") as! AddContactViewController
         addEditViewController.addEditType =  AddEditMode.add
