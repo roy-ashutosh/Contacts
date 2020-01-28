@@ -52,6 +52,15 @@ class ContactDetailViewController: UIViewController {
         contactImage.image = UIImage(named: "placeholder_photo")
         contactName.text = contactModel?.first_name
         
+//        contactDetailViewModel.getContactDetails(url: contactModel?.url ?? "") { [weak self] response in
+//            self?.detail = response
+//            DispatchQueue.main.async {
+//                print(response)
+//                self?.detailTableView.reloadData()
+//            }
+//        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
         contactDetailViewModel.getContactDetails(url: contactModel?.url ?? "") { [weak self] response in
             self?.detail = response
             DispatchQueue.main.async {

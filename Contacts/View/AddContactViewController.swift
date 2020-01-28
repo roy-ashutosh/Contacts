@@ -29,12 +29,10 @@ class AddContactViewController: UIViewController {
         case .add:
             let url = "https://gojek-contacts-app.herokuapp.com/contacts.json"
             contactAddEditVM.updateContactDetails(url: url, httpMethodType: "POST", paramDict: self.editedFieldValues)
-//            contactAddEditVM.updateContactDetails(url: url, paramDict: self.editedFieldValues)
         case .edit:
             if let id = existingDetail?.id {
                 let url = "https://gojek-contacts-app.herokuapp.com/contacts/\(id).json"
                 contactAddEditVM.updateContactDetails(url: url, httpMethodType: "PUT", paramDict: self.editedFieldValues)
-//                contactAddEditVM.updateContactDetails(url: url, paramDict: self.editedFieldValues)
             }
         default: break
         }

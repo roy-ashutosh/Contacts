@@ -24,6 +24,8 @@ class ContactAddEditViewModel: NSObject {
         
         networking.performNetworkTaskWithBody(endpoint: url, type: ContactDetailModel.self, httpMethod: httpMethodType, bodyData: jsonData) { (response) in
             
+            print(response)
+            
         }
             
     }

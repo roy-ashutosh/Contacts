@@ -14,6 +14,8 @@ class ContactListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    private let refreshControl = UIRefreshControl()
+    
     @IBAction func addContact(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -32,6 +34,25 @@ class ContactListViewController: UIViewController {
         contactlistViewModel.getContactList { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
+            }
+        }
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+    }
+    
+    @objc private func refreshTableView() {
+        
+        contactlistViewModel.getContactList { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                
+                self?.refreshControl.endRefreshing()
             }
         }
     }
