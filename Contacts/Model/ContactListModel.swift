@@ -34,3 +34,4 @@ struct ContactDetailModel: Codable {
     let profile_pic : String?
     let favorite : Bool?
 }
+

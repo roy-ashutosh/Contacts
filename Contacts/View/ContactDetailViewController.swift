@@ -32,7 +32,7 @@ class ContactDetailViewController: UIViewController {
     let fieldNames : [String] = ["mobile", "email"]
     var detail : ContactDetailModel?
     
-    var contactModel : ContactModel?
+    var contactModel : Contact?
 //    var contactDetailModel : ContactDetailModel?
     
     @IBOutlet weak var contactImage: UIImageView!
@@ -59,8 +59,6 @@ class ContactDetailViewController: UIViewController {
 //                self?.detailTableView.reloadData()
 //            }
 //        }
-    }
-    override func viewWillAppear(_ animated: Bool) {
         contactDetailViewModel.getContactDetails(url: contactModel?.url ?? "") { [weak self] response in
             self?.detail = response
             DispatchQueue.main.async {
@@ -68,6 +66,15 @@ class ContactDetailViewController: UIViewController {
                 self?.detailTableView.reloadData()
             }
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+//        contactDetailViewModel.getContactDetails(url: contactModel?.url ?? "") { [weak self] response in
+//            self?.detail = response
+//            DispatchQueue.main.async {
+//                print(response)
+//                self?.detailTableView.reloadData()
+//            }
+//        }
     }
 }
 

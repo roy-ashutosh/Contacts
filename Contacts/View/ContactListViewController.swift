@@ -30,9 +30,12 @@ class ContactListViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "Contacts"
+                
+        contactlistViewModel.updateContactListEntity()
         
         contactlistViewModel.getContactList { [weak self] in
             DispatchQueue.main.async {
+                contactlistViewModel.updateContactListEntity()
                 self?.tableView.reloadData()
             }
         }
@@ -49,12 +52,13 @@ class ContactListViewController: UIViewController {
     @objc private func refreshTableView() {
         
         contactlistViewModel.getContactList { [weak self] in
+            contactlistViewModel.updateContactListEntity()
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
-                
                 self?.refreshControl.endRefreshing()
             }
         }
+        
     }
 }
 
@@ -91,7 +95,6 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource{
         let viewController = storyboard.instantiateViewController(withIdentifier :"ContactDetailViewController") as! ContactDetailViewController
         viewController.contactModel = model
         self.navigationController?.pushViewController(viewController, animated: true)
-        
         
     }
 }

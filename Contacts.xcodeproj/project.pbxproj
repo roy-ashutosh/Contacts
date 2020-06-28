@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75F886C724A74B7A0010470E /* DataBaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F886C624A74B7A0010470E /* DataBaseUtil.swift */; };
 		D5C4DC2423DFA354001A5A12 /* ContactAddEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C4DC2323DFA354001A5A12 /* ContactAddEditViewModel.swift */; };
 		D5CF764F23DE2780000F4425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CF764E23DE2780000F4425 /* AppDelegate.swift */; };
 		D5CF765123DE2780000F4425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CF765023DE2780000F4425 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75F886C624A74B7A0010470E /* DataBaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseUtil.swift; sourceTree = "<group>"; };
 		D5C4DC2323DFA354001A5A12 /* ContactAddEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddEditViewModel.swift; sourceTree = "<group>"; };
 		D5CF764B23DE2780000F4425 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CF764E23DE2780000F4425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				D5CF768B23DE2A33000F4425 /* Networking.swift */,
+				75F886C624A74B7A0010470E /* DataBaseUtil.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				D5CF768A23DE2981000F4425 /* ContactListModel.swift in Sources */,
 				D5CF769423DE382C000F4425 /* ContactDetailViewModel.swift in Sources */,
 				D5CF765123DE2780000F4425 /* SceneDelegate.swift in Sources */,
+				75F886C724A74B7A0010470E /* DataBaseUtil.swift in Sources */,
 				D5C4DC2423DFA354001A5A12 /* ContactAddEditViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
